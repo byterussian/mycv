@@ -11,6 +11,7 @@
 *.blg
 *.run.xml
 *.thm
+*.db
 *.gnuplot
 *.synctex.gz
 *.synctex.gz(busy)
