@@ -49,7 +49,7 @@
 \RequirePackage[quiet]{fontspec}
 \RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 
-\newfontfamily\bodyfont[]{HelveticaNeue-Medium}
+\newfontfamily\bodyfont[]{HelveticaNeue-Thin}
 \newfontfamily\thinfont[]{HelveticaNeue-UltraLight}
 \newfontfamily\headingfont[]{HelveticaNeue-CondensedBold}
 
