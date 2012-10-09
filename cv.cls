@@ -27,7 +27,7 @@
 \definecolor{red}{HTML}{FB4485}
 \definecolor{blue}{HTML}{6CE0F1}
 
-%\ifdefined\@cv@print
+\ifdefined\@cv@print
   \colorlet{green}{gray}
   \colorlet{orange}{gray}
   \colorlet{purple}{gray}
@@ -35,10 +35,10 @@
   \colorlet{blue}{gray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
-%\else
-%  \colorlet{fillheader}{gray}
-%  \colorlet{header}{white}
-%\fi
+\else
+  \colorlet{fillheader}{gray}
+  \colorlet{header}{white}
+\fi
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
 
@@ -154,13 +154,13 @@
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
-  \let\oldsection\section
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
   \obeycr
+
 }{%
   \restorecr
   \end{flushright}
