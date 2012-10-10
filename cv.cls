@@ -28,11 +28,11 @@
 \definecolor{blue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
-  \colorlet{green}{gray}
-  \colorlet{orange}{gray}
-  \colorlet{purple}{gray}
-  \colorlet{red}{gray}
-  \colorlet{blue}{gray}
+  \colorlet{green}{lightgray}
+  \colorlet{orange}{lightgray}
+  \colorlet{purple}{lightgray}
+  \colorlet{red}{lightgray}
+ % \colorlet{blue}{lightgray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
@@ -155,7 +155,8 @@
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor}#1}
+	
   }
   \begin{textblock}{3.6}(1.5, 4.33)
   \begin{flushright}
@@ -173,4 +174,8 @@
 %%%%%%%%%%%%%%%%
 
 \RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
-\RequirePackage{hyperref}
+\RequirePackage[colorlinks=true,
+			linkcolor=blue,
+			anchorcolor=blue,
+			citecolor=blue,
+			urlcolor=blue]{hyperref}
