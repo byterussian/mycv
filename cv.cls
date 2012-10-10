@@ -16,7 +16,6 @@
 \RequirePackage{xcolor}
 
 \definecolor{white}{RGB}{255,255,255}
-
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
@@ -59,7 +58,6 @@
   \thinfont%
   \color{white}%
 }
-
 \newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
@@ -88,7 +86,6 @@
   \color{lightgray} #1#2#3%
   }%
 }
-
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
@@ -134,20 +131,20 @@
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
+ \let\oldsection\section
   \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor}#1}
-	
-  }
-  \begin{textblock}{3.6}(1.5, 4.33)
-  \begin{flushright}
+    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}	
+  }%
+  \begin{textblock}{3.6}(1.5, 4.33)%
+  \begin{flushright}%
   \obeycr
 
 }{%
   \restorecr
-  \end{flushright}
-  \end{textblock}
+  \end{flushright}%
+  \end{textblock}%
   \let\section\oldsection
-}
+}%
 
 %%%%%%%%%%%%%%%%
 % Other tweaks %
