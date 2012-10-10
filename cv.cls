@@ -25,14 +25,14 @@
 \definecolor{orange}{HTML}{FDA333}
 \definecolor{purple}{HTML}{D3A4F9}
 \definecolor{red}{HTML}{FB4485}
-\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{lightblue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
   \colorlet{green}{lightgray}
   \colorlet{orange}{lightgray}
   \colorlet{purple}{lightgray}
   \colorlet{red}{lightgray}
- % \colorlet{blue}{lightgray}
+  \colorlet{blue}{lightgray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
@@ -54,7 +54,7 @@
 \newfontfamily\headingfont[]{HelveticaNeue-CondensedBold}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{HelveticaNeue-Light}
+\setmainfont[Mapping=tex-text]{HelveticaNeue-Light}
 
 \setmathfont{XITS Math}
 
@@ -178,4 +178,4 @@
 			linkcolor=blue,
 			anchorcolor=blue,
 			citecolor=blue,
-			urlcolor=blue]{hyperref}
+			urlcolor=lightblue]{hyperref}
