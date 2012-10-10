@@ -20,19 +20,9 @@
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
-
-\definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
 \definecolor{lightblue}{HTML}{6CE0F1}
 
 \ifdefined\@cv@print
-  \colorlet{green}{lightgray}
-  \colorlet{orange}{lightgray}
-  \colorlet{purple}{lightgray}
-  \colorlet{red}{lightgray}
-  \colorlet{blue}{lightgray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
@@ -90,22 +80,13 @@
 %%%%%%%%%%%%%
 % Structure %
 %%%%%%%%%%%%%
+
 \RequirePackage{parskip}
 
-\newcounter{colorCounter}
 \def\@sectioncolor#1#2#3{%
   {%
-    \color{%
-      \ifcase\value{colorCounter}%
-        blue\or%
-        red\or%
-        orange\or%
-        green\or%
-        purple\else%
-        headercolor\fi%
-    } #1#2#3%
+  \color{lightgray} #1#2#3%
   }%
-  \stepcounter{colorCounter}%
 }
 
 \renewcommand{\section}[1]{
@@ -122,7 +103,6 @@
   \Large\headingfont\color{headercolor} #2%
   \par\vspace{.25\parskip}%
 }
-
 \pagestyle{empty}
 
 
