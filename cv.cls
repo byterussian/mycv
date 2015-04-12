@@ -4,9 +4,9 @@
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
-}
-\ProcessOptions\relax
-\LoadClass{article}
+  }
+  \ProcessOptions\relax
+  \LoadClass{article}
 
 
 %%%%%%%%%%
@@ -19,14 +19,14 @@
 \definecolor{darkgray}{HTML}{333333}
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
-\definecolor{lightblue}{HTML}{6CE0F1}
+\definecolor{lightblue}{HTML}{3498db}
 
 \ifdefined\@cv@print
-  \colorlet{fillheader}{white}
-  \colorlet{header}{gray}
+\colorlet{fillheader}{white}
+\colorlet{header}{gray}
 \else
-  \colorlet{fillheader}{gray}
-  \colorlet{header}{white}
+\colorlet{fillheader}{gray}
+\colorlet{header}{white}
 \fi
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
@@ -54,22 +54,22 @@
   \fontsize{14pt}{24pt}\selectfont%
   \thinfont%
   \color{white}%
-}
+  }
 \newcommand{\header}[3]{%
-  \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
+\begin{tikzpicture}[remember picture,overlay]
+\node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
-    };
+      };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
       \thinfont #3%
-    };
-  \end{tikzpicture}
-  \vspace{2.5cm}
-  \vspace{-2\parskip}
-}
+      };
+      \end{tikzpicture}
+      \vspace{2.5cm}
+      \vspace{-2\parskip}
+      }
 
 
 %%%%%%%%%%%%%
@@ -82,22 +82,22 @@
   {%
   \color{lightgray} #1#2#3%
   }%
-}
-\renewcommand{\section}[1]{
+  }
+  \renewcommand{\section}[1]{
   \par\vspace{\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
-  }
-  \par\vspace{\parskip}
-}
+    }
+    \par\vspace{\parskip}
+    }
 
-\renewcommand{\subsection}[2]{
+    \renewcommand{\subsection}[2]{
   \par\vspace{.5\parskip}%
   \Large\headingfont\color{headercolor} #2%
   \par\vspace{.25\parskip}%
-}
-\pagestyle{empty}
+  }
+  \pagestyle{empty}
 
 
 %%%%%%%%%%%%%%%%%%%%
@@ -106,9 +106,9 @@
 
 \setlength{\tabcolsep}{0pt}
 \newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
-  \end{tabular*}
+\end{tabular*}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
@@ -117,7 +117,7 @@
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
     #4\vspace{\parsep}%
-  }\\}
+    }\\}
 
 
 %%%%%%%%%%%%%%
@@ -128,17 +128,22 @@
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
- \let\oldsection\section
-  \renewcommand{\section}[1]{
-    \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}	
+\let\oldsection\section
+\renewcommand{\section}[1]{
+\par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
+  \smallskip%
+    \smallskip%
   }%
+
   \begin{textblock}{3.6}(1.5, 4.33)%
-  \begin{flushright}%
+
+  \begin{flushleft}%
+
   \obeycr
 
 }{%
-  \restorecr
-  \end{flushright}%
+\restorecr
+  \end{flushleft}%
   \end{textblock}%
   \let\section\oldsection
 }%
@@ -149,7 +154,7 @@
 
 \RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
 \RequirePackage[colorlinks=true,
-			linkcolor=blue,
-			anchorcolor=blue,
-			citecolor=blue,
-			urlcolor=lightblue]{hyperref}
+linkcolor=blue,
+anchorcolor=blue,
+citecolor=blue,
+urlcolor=lightblue]{hyperref}
